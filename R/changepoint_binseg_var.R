@@ -1,7 +1,7 @@
-#' Changepoint BinSeg algorithm using the mean function
+#' Changepoint BinSeg algorithm using the variance function
 #'
-#' Identify the mean changepoints using Binary Segmentation algorithm.
-#'
+#' Identify the changepoints where the variability of the outcome
+#' variable changes using Binary Segmentation algorithm.
 #'
 #' @param variable (num) The outcome variable.
 #' @param time (num) The time point(s) in which the outcome `variable`
@@ -21,8 +21,8 @@
 #'
 #' # Identify the 3 change points of the mean of variable using BinSeg
 #' # algorithm
-#' changepoint_binseg_mean(variable, time, change_points)
-changepoint_binseg_mean <- function(variable, time, change_points) {
+#' changepoint_binseg_var(variable, time, change_points)
+changepoint_binseg_var <- function(variable, time, change_points){
 
   stopifnot(
     `change_point must be a single number` = length(change_points) == 1,
@@ -30,12 +30,12 @@ changepoint_binseg_mean <- function(variable, time, change_points) {
       length(variable) == length(time)
   )
 
-
-  cpt_mean <- changepoint::cpt.mean(
+  cpt_var <- changepoint::cpt.var(
     variable,
     method = "BinSeg",
     Q = change_points
   )
 
-  sort(unlist(time[changepoint::cpts(cpt_mean)]))
+  sort(unlist(time[changepoint::cpts(cpt_var)]))
 }
+
