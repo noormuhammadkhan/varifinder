@@ -29,8 +29,8 @@
 #' # Identify the 3 change points of the variance of variable using
 #' # BinSeg algorithm
 #' changepoint_binseg(variable, time, change_points, variance = TRUE)
-changepoint_binseg_mean <- function(variable, time, change_points,
-                                    variance) {
+changepoint_binseg <- function(variable, time, change_points,
+                                    variance=TRUE) {
 
   stopifnot(
     `change_point must be a single number` = length(change_points) == 1,
@@ -51,10 +51,10 @@ changepoint_binseg_mean <- function(variable, time, change_points,
     Q = change_points
   )
 
-  if(variance == TRUE){
+  if(variance){
     sort(unlist(time[changepoint::cpts(cpt_var)]))
   }
-  else{
+  if(!variance){
     sort(unlist(time[changepoint::cpts(cpt_mean)]))
   }
 
