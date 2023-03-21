@@ -25,7 +25,10 @@
 #'
 #' # Identify the 3 change points of the mean of variable using BinSeg
 #' # algorithm
-#' changepoint_binseg_mean(variable, time, change_points)
+#' changepoint_binseg(variable, time, change_points)
+#' # Identify the 3 change points of the variance of variable using
+#' # BinSeg algorithm
+#' changepoint_binseg(variable, time, change_points, variance = TRUE)
 changepoint_binseg_mean <- function(variable, time, change_points,
                                     variance) {
 

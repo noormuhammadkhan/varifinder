@@ -2,7 +2,7 @@ Package: varifinder
 Title: Variability Ratio Index Finder
 Version: 0.0.0.9000
 Authors@R: 
-    person("Noor", "muhammad Khan", , "noor.muhammadkhan@studenti.unipd.it", role = c("aut", "cre"),
+    person("Noor", "Muhammad Khan", , "noor.muhammadkhan@studenti.unipd.it", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0003-4713-7277"))
 Description: Calculate VARI to compare the change points in retrospective
     data.

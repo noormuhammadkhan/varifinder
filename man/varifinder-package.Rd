@@ -9,7 +9,7 @@
 Calculate VARI to compare the change points in retrospective data.
 }
 \author{
-\strong{Maintainer}: Noor muhammad Khan \email{noor.muhammadkhan@studenti.unipd.it} (\href{https://orcid.org/0000-0003-4713-7277}{ORCID})
+\strong{Maintainer}: Noor Muhammad Khan \email{noor.muhammadkhan@studenti.unipd.it} (\href{https://orcid.org/0000-0003-4713-7277}{ORCID})
 
 }
 \keyword{internal}
