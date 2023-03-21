@@ -4,7 +4,7 @@
 \alias{changepoint_binseg_mean}
 \title{Changepoint identification with Binary Segmentation algorithm}
 \usage{
-changepoint_binseg_mean(variable, time, change_points, variance)
+changepoint_binseg_mean(variable, time, change_points)
 }
 \arguments{
 \item{variable}{(num) The outcome variable.}
@@ -14,10 +14,6 @@ is measured.}
 
 \item{change_points}{(num) Single number of changepoint that
 are expecting}
-
-\item{variance}{(char) if TRUE, then identifies the changepoints
-of variance of the outcome \code{variable} (default is considering the
-mean).}
 }
 \value{
 (num) vector of length \code{change_points} reporting the

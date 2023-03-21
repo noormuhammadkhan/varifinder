@@ -6,7 +6,7 @@ test_that("Error if chengepoints is not a single number", {
 
   # test
   expect_error(
-    changepoint_binseg(var, time, change_points),
+    changepoint_binseg_mean(var, time, change_points),
     "must be a single number"
   )
 
@@ -19,6 +19,6 @@ test_that("variable and time have same length", {
   change_points <- 2
 
   # test
-  expect_error(changepoint_binseg(var, time, change_points))
+  expect_error(changepoint_binseg_mean(var, time, change_points))
 
 })

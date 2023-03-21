@@ -9,9 +9,6 @@
 #'   is measured.
 #' @param change_points (num) Single number of changepoint that
 #'   are expecting
-#' @param variance (char) if TRUE, then identifies the changepoints
-#'   of variance of the outcome `variable` (default is considering the
-#'   mean).
 #'
 #' @return (num) vector of length `change_points` reporting the
 #'   timepoints when the changes happens.
@@ -26,8 +23,7 @@
 #' # Identify the 3 change points of the mean of variable using BinSeg
 #' # algorithm
 #' changepoint_binseg_mean(variable, time, change_points)
-changepoint_binseg_mean <- function(variable, time, change_points,
-                                    variance) {
+changepoint_binseg_mean <- function(variable, time, change_points) {
 
   stopifnot(
     `change_point must be a single number` = length(change_points) == 1,
@@ -42,17 +38,6 @@ changepoint_binseg_mean <- function(variable, time, change_points,
     Q = change_points
   )
 
-  cpt_var <- changepoint::cpt.var(
-    variable,
-    method = "BinSeg",
-    Q = change_points
-  )
-
-  if(variance == TRUE){
-    sort(unlist(time[changepoint::cpts(cpt_var)]))
-  }
-  else{
-    sort(unlist(time[changepoint::cpts(cpt_mean)]))
-  }
+  sort(unlist(time[changepoint::cpts(cpt_mean)]))
 
 }

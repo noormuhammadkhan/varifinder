@@ -4,7 +4,7 @@
 \alias{changepoint_binseg}
 \title{Changepoint identification with Binary Segmentation algorithm}
 \usage{
-changepoint_binseg(variable, time, change_points, variance = TRUE)
+changepoint_binseg(variable, time, change_points, stat = c("mean", "variance"))
 }
 \arguments{
 \item{variable}{(num) The outcome variable.}
@@ -15,7 +15,7 @@ is measured.}
 \item{change_points}{(num) Single number of changepoint that
 are expecting}
 
-\item{variance}{(char) if TRUE, then identifies the changepoints
+\item{stat}{(char) if variance, then identifies the changepoints
 of variance of the outcome \code{variable} (default is considering the
 mean).}
 }
@@ -35,8 +35,8 @@ change_points <- 3
 
 # Identify the 3 change points of the mean of variable using BinSeg
 # algorithm
-changepoint_binseg(variable, time, change_points)
+changepoint_binseg(variable, time, change_points, stat = "variance")
 # Identify the 3 change points of the variance of variable using
 # BinSeg algorithm
-changepoint_binseg(variable, time, change_points, variance = TRUE)
+changepoint_binseg(variable, time, change_points)
 }
