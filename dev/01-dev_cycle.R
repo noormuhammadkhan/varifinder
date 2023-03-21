@@ -20,3 +20,4 @@ usethis::use_r("changepoint_pelt")
 usethis::use_test("changepoint_pelt")
 
 usethis::use_r("changepoint_CI")
+usethis::use_r("varifinder")
