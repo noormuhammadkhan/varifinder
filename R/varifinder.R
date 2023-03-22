@@ -3,7 +3,7 @@
 #' Calculate the Variability Ratio Index (VARI) index.
 #'
 #' @param variable (num) The outcome variable in long format.
-#' @param phase (num) vector of clinical phases of the total time
+#' @param phase (character) list of clinical phases of the total time
 #'  in long format.
 #' @param time (num) vector of time points, when the outcome is measured
 #'  in long format.
@@ -22,7 +22,7 @@
 #' # Identify the VARI
 #'  varifinder(variable, phase, time)
 
-varifinder <- function(phase, variable, time){
+varifinder <- function(variable, phase, time){
 
   j = 0
   j_rows = list()

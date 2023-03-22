@@ -4,13 +4,13 @@
 \alias{varifinder}
 \title{Variability Ratio Index (VARI)}
 \usage{
-varifinder(phase, variable, time)
+varifinder(variable, phase, time)
 }
 \arguments{
-\item{phase}{(num) vector of clinical phases of the total time
-in long format.}
-
 \item{variable}{(num) The outcome variable in long format.}
+
+\item{phase}{(character) list of clinical phases of the total time
+in long format.}
 
 \item{time}{(num) vector of time points, when the outcome is measured
 in long format.}
