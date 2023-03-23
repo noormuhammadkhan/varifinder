@@ -48,7 +48,7 @@ changepoint_binseg <- function(variable, time, change_points,
       variable = variable,
       time = time,
       change_points = change_points),
-    "variance" = changepoint_binseg_mean(
+    "variance" = changepoint_binseg_var(
       variable = variable,
       time = time,
       change_points = change_points)
