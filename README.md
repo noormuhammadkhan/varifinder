@@ -6,8 +6,15 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of varifinder is to calculate VARI to compare the change points
-in retrospective data.
+Monitoring physical activity and other factors of the patients after
+administrating anesthesia is important because it can have several
+effects on the body. It is also necessary to detect the time points when
+the values of these variables change. In general, the total anesthesia
+period is clinically divided into many phases, where the large deviation
+of the values within same phase is frequently observed, specially in
+pediatric patient data. The goal of `varifinder` is to calculate the
+variability ratio index (VARI) to compare the number of detected change
+points between different clinical phases in retrospective data.
 
 ## Installation
 
