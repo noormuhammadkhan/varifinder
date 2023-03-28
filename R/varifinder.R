@@ -1,6 +1,8 @@
 #' Variability Ratio Index (VARI)
 #'
-#' Calculate the Variability Ratio Index (VARI) index.
+#' Calculate the Variability Ratio Index (VARI) to compare the number of
+#' detected change points between different clinical phases in
+#' retrospective data.
 #'
 #' @param variable (num) The outcome variable in long format.
 #' @param phase (character) list of clinical phases of the total time
@@ -8,9 +10,12 @@
 #' @param time (num) vector of time points, when the outcome is measured
 #'  in long format.
 #'
-#' @return (num) data frame containing rows for the the unique phases.
-#' Times points, change points and VARI based on mean and variance for
-#' each phase.
+#' @return (num) data frame containing rows for the unique phases.
+#' The column `Times` presents the total number of time points within
+#' that phase. `CPT_M` and `CPT_V` present the total number of
+#' detected change points in each phase based on mean and variance
+#' function of the variable respectively. Finally, the column `VARI_M`
+#' and `VARI_V` present the variability ratio index for each phase.
 #' @export
 #'
 #' @examples
@@ -36,13 +41,13 @@ varifinder <- function(variable, phase, time){
     j_rows  <- seq(j + 1, j + as.matrix(summary(phase))[i])
     j <- j + as.matrix(summary(phase))[i]
 
-    Time [i] <- (length(j_rows))
+    Time[i] <- (length(j_rows))
 
 
-    CPT_M [i] <- (length(changepoint_pelt_mean(variable[j_rows], time[j_rows])))
+    CPT_M[i] <- (length(changepoint_pelt_mean(variable[j_rows], time[j_rows])))
 
 
-    CPT_V [i] <- (length(changepoint_pelt_var(variable[j_rows], time[j_rows])))
+    CPT_V[i] <- (length(changepoint_pelt_var(variable[j_rows], time[j_rows])))
 
 
     Phase <- seq_along(unique(phase))

@@ -1,21 +1,21 @@
-#' Changepoint identification with Binary Segmentation algorithm
+#' Change point identification with Binary Segmentation algorithm.
 #'
-#' Identify the changepoints, where the mean or variance of the
-#' response variable changes  using Binary Segmentation algorithm.
+#' Identify the time points, when the mean or variance of the
+#' response variable changes using Binary Segmentation algorithm.
 #'
 #'
 #' @param variable (num) The outcome variable.
 #' @param time (num) The time point(s) in which the outcome `variable`
 #'   is measured.
-#' @param change_points (num) Single number of changepoint that
+#' @param change_points (num) Single number of change point that
 #'   are expecting
-#' @param stat (char) if variance, then identifies the changepoints
-#'   of variance of the outcome `variable` (default is considering the
-#'   mean).
+#' @param stat (char) if variance, then identifies the time points, when
+#'   the variance of the outcome `variable` changes.
+#'  (default is considering the mean).
 #'
 #'
 #' @return (num) vector of length `change_points` reporting the
-#'   timepoints when the changes happens.
+#'   time points when the changes happen.
 #' @export
 #'
 #' @examples

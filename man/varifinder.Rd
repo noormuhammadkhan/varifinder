@@ -16,12 +16,17 @@ in long format.}
 in long format.}
 }
 \value{
-(num) data frame containing rows for the the unique phases.
-Times points, change points and VARI based on mean and variance for
-each phase.
+(num) data frame containing rows for the unique phases.
+The column \code{Times} presents the total number of time points within
+that phase. \code{CPT_M} and \code{CPT_V} present the total number of
+detected change points in each phase based on mean and variance
+function of the variable respectively. Finally, the column \code{VARI_M}
+and \code{VARI_V} present the variability ratio index for each phase.
 }
 \description{
-Calculate the Variability Ratio Index (VARI) index.
+Calculate the Variability Ratio Index (VARI) to compare the number of
+detected change points between different clinical phases in
+retrospective data.
 }
 \examples{
 # Prepare a dummy data set

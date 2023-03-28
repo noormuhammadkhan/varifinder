@@ -2,7 +2,7 @@
 % Please edit documentation in R/changepoint_CI.R
 \name{changepoint_CI}
 \alias{changepoint_CI}
-\title{Confidence Interval of mean difference at the Changepoint}
+\title{Confidence Interval of mean difference at the Change point.}
 \usage{
 changepoint_CI(variable, changepoints)
 }
@@ -13,12 +13,15 @@ changepoint_CI(variable, changepoints)
 the timepoints when the changes happens.}
 }
 \value{
-(num) data frame including amount of mean differences at
-every change points with 95\% confidence interval.
+(num) data frame containing the column \code{Change_Points} that
+presents the time points when the mean of the variable changes.
+The column \code{Mean_difference} presents the amount of mean differs at
+the change point with 95\% confidence interval in the column
+\code{Lower_Bound} and \code{Upper_Bound}.
 }
 \description{
-Calculate the 95\% confidence interval for the mean differences
-at the changepoints.
+Calculate the 95\% confidence interval for the differences at the
+time points, when the mean value of the variable differ.
 }
 \examples{
 # Prepare a dummy data set

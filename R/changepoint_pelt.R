@@ -1,18 +1,19 @@
-#' Changepoint identification with PELT algorithm
+#' Change point identification with PELT algorithm
 #'
-#' Identify the changepoints, where the mean or variance of the
-#' response variable changes  using the Pruned Exact Linear Time
-#'  `(PELT)` algorithm.
+#' Identify the time points, when the mean or variance of the
+#' response variable changes using the Pruned Exact Linear Time
+#' `(PELT)` algorithm.
 #'
 #'
 #' @param variable (num) The outcome variable.
 #' @param time (num) The time point(s) in which the outcome
 #' `variable` is measured.
-#' @param stat (char) if variance, then identifies the changepoints
-#' of variance of the outcome `variable` (default is considering the
-#' mean).
+#' @param stat (char) if variance, then identifies the time points, when
+#'   the variance of the outcome `variable` changes.
+#'  (default is considering the mean).
+#'
 #' @return (num) vector of length `change_points` reporting the
-#'   timepoints when the changes happens.
+#'   time points when the changes happen.
 #' @export
 #'
 #' @examples

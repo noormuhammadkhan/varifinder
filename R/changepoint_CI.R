@@ -1,13 +1,16 @@
-#' Confidence Interval of mean difference at the Changepoint
+#' Confidence Interval of mean difference at the Change point.
 #'
-#' Calculate the 95% confidence interval for the mean differences
-#' at the changepoints.
+#' Calculate the 95% confidence interval for the differences at the
+#' time points, when the mean value of the variable differ.
 #'
 #' @param variable (num) The outcome variable.
 #' @param changepoints (num) vector of length `change_points` reporting
 #'  the timepoints when the changes happens.
-#' @return (num) data frame including amount of mean differences at
-#' every change points with 95% confidence interval.
+#' @return (num) data frame containing the column `Change_Points` that
+#' presents the time points when the mean of the variable changes.
+#' The column `Mean_difference` presents the amount of mean differs at
+#' the change point with 95% confidence interval in the column
+#' `Lower_Bound` and `Upper_Bound`.
 #'
 #' @export
 #'
