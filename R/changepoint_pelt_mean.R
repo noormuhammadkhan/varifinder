@@ -1,6 +1,6 @@
-#' Changepoint identification with PELT algorithm
+#' Change point identification with PELT algorithm
 #'
-#' Identify the changepoints, where the mean of the response variable
+#' Identify the change points, where the mean of the response variable
 #'  changes  using the Pruned Exact Linear Time `(PELT)`  algorithm.
 #'
 #'
@@ -9,7 +9,7 @@
 #'   is measured.
 #'
 #' @return (num) vector of length `change_points` reporting the
-#'   timepoints when the changes happens.
+#'   time points when the changes happen.
 #' @export
 #'
 #' @examples

@@ -2,7 +2,7 @@
 % Please edit documentation in R/changepoint_binseg_var.R
 \name{changepoint_binseg_var}
 \alias{changepoint_binseg_var}
-\title{Changepoint BinSeg algorithm using the variance function}
+\title{Change point identification with Binary Segmentation algorithm}
 \usage{
 changepoint_binseg_var(variable, time, change_points)
 }
@@ -12,15 +12,15 @@ changepoint_binseg_var(variable, time, change_points)
 \item{time}{(num) The time point(s) in which the outcome \code{variable}
 is measured.}
 
-\item{change_points}{(num) Single number of changepoint that
+\item{change_points}{(num) Single number of change point that
 are expecting}
 }
 \value{
 (num) vector of length \code{change_points} reporting the
-timepoints when the changes happens.
+time points when the changes happen.
 }
 \description{
-Identify the changepoints where the variability of the outcome
+Identify the change points where the variability of the outcome
 variable changes using Binary Segmentation algorithm.
 }
 \examples{

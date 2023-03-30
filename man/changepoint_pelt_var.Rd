@@ -2,7 +2,7 @@
 % Please edit documentation in R/changepoint_pelt_var.R
 \name{changepoint_pelt_var}
 \alias{changepoint_pelt_var}
-\title{Changepoint identification with PELT algorithm}
+\title{Change point identification with PELT algorithm}
 \usage{
 changepoint_pelt_var(variable, time)
 }
@@ -14,10 +14,10 @@ is measured.}
 }
 \value{
 (num) vector of length \code{change_points} reporting the
-timepoints when the changes happens.
+time points when the changes happen.
 }
 \description{
-Identify the changepoints, where the variance of the response
+Identify the change points, where the variance of the response
 variable changes  using the Pruned Exact Linear Time \code{(PELT)}
 algorithm.
 }
