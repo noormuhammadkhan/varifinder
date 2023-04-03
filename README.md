@@ -13,8 +13,8 @@ the values of these variables change. In general, the total anesthesia
 period is clinically divided into many phases, where the large deviation
 of the values within same phase is frequently observed, specially in
 pediatric patient data. The goal of `varifinder` is to calculate the
-variability ratio index (VARI) to compare the number of detected change
-points between different clinical phases in retrospective data.
+variability ratio index (VARI) to evaluate clinical phases in retrospective 
+data.
 
 ## Installation
 
