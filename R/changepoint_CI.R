@@ -23,12 +23,12 @@
 #' # Identify the change points of the mean of variable using BinSeg
 #' # algorithm
 #'  cpt_binseg <- changepoint_binseg(variable, time, change_points)
-#'  changepoint_CI(variable, cpt_binseg)
+#'  changepoint_ci(variable, cpt_binseg)
 #' # Identify the change points of the mean of variable using
 #' # PELT algorithm
 #'  cpt_pelt <- changepoint_pelt(variable, time)
-#'  changepoint_CI(variable, cpt_pelt)
-changepoint_CI <- function(variable, changepoints){
+#'  changepoint_ci(variable, cpt_pelt)
+changepoint_ci <- function(variable, changepoints){
 
     mean_difference <- NULL
   for (i in 1:length(changepoints)) {

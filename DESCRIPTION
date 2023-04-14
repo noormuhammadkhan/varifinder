@@ -8,6 +8,7 @@ Description: Calculate VARI to compare the change points in retrospective
     data.
 License: GPL (>= 3)
 Imports: 
+    binom,
     changepoint
 Suggests: 
     spelling,
