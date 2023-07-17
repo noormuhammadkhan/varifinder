@@ -30,6 +30,7 @@ changepoint_pelt_var <- function(variable, time) {
 
   cpt_var <- changepoint::cpt.var(
     variable,
+    penalty = "AIC",
     method = "PELT"
   )
 
