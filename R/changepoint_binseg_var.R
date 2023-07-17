@@ -32,6 +32,7 @@ changepoint_binseg_var <- function(variable, time, change_points){
 
   cpt_var <- changepoint::cpt.var(
     variable,
+    penalty = "BIC",
     method = "BinSeg",
     Q = change_points
   )
