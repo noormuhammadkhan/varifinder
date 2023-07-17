@@ -34,6 +34,7 @@ changepoint_binseg_mean <- function(variable, time, change_points) {
 
   cpt_mean <- changepoint::cpt.mean(
     variable,
+    penalty = "BIC",
     method = "BinSeg",
     Q = change_points
   )
