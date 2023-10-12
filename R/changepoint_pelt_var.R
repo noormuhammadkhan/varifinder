@@ -34,6 +34,6 @@ changepoint_pelt_var <- function(variable, time) {
     method = "PELT"
   )
 
-  sort(unlist(time[changepoint::cpts(cpt_var)]))
+  sort(changepoint::cpts(cpt_var))
 
 }
