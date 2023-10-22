@@ -6,3 +6,6 @@ usethis::use_package_doc() # create file (do not touch it) for pkg documentation
 usethis::use_roxygen_md() # extremaly easily way to write func docs
 usethis::use_testthat() # the best (unbiased opinion!!) test environment for R!
 usethis::use_spell_check()
+
+install.packages("lintr")
+usethis::use_github_action("lint")
