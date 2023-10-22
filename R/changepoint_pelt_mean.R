@@ -29,10 +29,10 @@ changepoint_pelt_mean <- function(variable, time) {
 
 
   cpt_mean <- changepoint::cpt.mean(
-    variable, 
+    variable,
     penalty = "AIC",
     method = "PELT"
-    )
+  )
 
   sort(changepoint::cpts(cpt_mean))
 
