@@ -14,4 +14,6 @@ usethis::use_spell_check()
 
 install.packages("lintr")
 usethis::use_github_action("lint")
+usethis::use_package("lintr", type = "suggests")
 usethis::use_github_action("check-standard")
+

@@ -12,6 +12,7 @@ Imports:
     changepoint
 Suggests: 
     checkmate,
+    lintr,
     spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
