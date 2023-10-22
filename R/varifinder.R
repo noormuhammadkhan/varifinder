@@ -31,7 +31,7 @@ varifinder <- function(variable, phase, time) {
 
   j <- 0
   j_rows <- list()
-  time <- NULL
+  time_computed <- NULL
   cpt_m <- NULL
   cpt_v <- NULL
 
@@ -41,7 +41,7 @@ varifinder <- function(variable, phase, time) {
     j_rows  <- seq(j + 1, j + as.matrix(summary(phase))[i])
     j <- j + as.matrix(summary(phase))[i]
 
-    time[i] <- (length(j_rows))
+    time_computed[i] <- length(j_rows)
 
 
     cpt_m[i] <- (length(changepoint_pelt_mean(variable[j_rows], time[j_rows])))
@@ -50,12 +50,12 @@ varifinder <- function(variable, phase, time) {
     cpt_v[i] <- (length(changepoint_pelt_var(variable[j_rows], time[j_rows])))
 
 
-    phase <- seq_along(unique(phase))
+    phase_computed <- seq_along(unique(phase))
 
   }
 
-  vari_m <- cpt_m / time
-  vari_v <- cpt_v / time
+  vari_m <- cpt_m / time_computed
+  vari_v <- cpt_v / time_computed
 
-  return(data.frame(phase, time, cpt_m, vari_m, cpt_v, vari_v))
+  return(data.frame(phase_computed, time_computed, cpt_m, vari_m, cpt_v, vari_v))
 }
