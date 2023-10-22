@@ -11,11 +11,11 @@
 #'  in long format.
 #'
 #' @return (num) data frame containing rows for the unique phases.
-#' The column `Times` presents the total number of time points within
-#' that phase. `CPT_M` and `CPT_V` present the total number of
+#' The column `times` presents the total number of time points within
+#' that phase. `cpt_m` and `cpt_v` present the total number of
 #' detected change points in each phase based on mean and variance
-#' function of the variable respectively. Finally, the column `VARI_M`
-#' and `VARI_V` present the variability ratio index for each phase.
+#' function of the variable respectively. Finally, the column `vari_m`
+#' and `vari_v` present the variability ratio index for each phase.
 #' @export
 #'
 #' @examples
@@ -27,38 +27,35 @@
 #' # Identify the VARI
 #'  varifinder(variable, phase, time)
 
-varifinder <- function(variable, phase, time){
+varifinder <- function(variable, phase, time) {
 
-  j = 0
-  j_rows = list()
-  Time = NULL
-  CPT_M <- NULL
-  CPT_V <- NULL
+  j <- 0
+  j_rows <- list()
+  time <- NULL
+  cpt_m <- NULL
+  cpt_v <- NULL
 
-  for (i in 1:length(unique(phase))) {
+  for (i in seq_along(unique(phase))) {
 
 
     j_rows  <- seq(j + 1, j + as.matrix(summary(phase))[i])
     j <- j + as.matrix(summary(phase))[i]
 
-    Time[i] <- (length(j_rows))
+    time[i] <- (length(j_rows))
 
 
-    CPT_M[i] <- (length(changepoint_pelt_mean(variable[j_rows], time[j_rows])))
+    cpt_m[i] <- (length(changepoint_pelt_mean(variable[j_rows], time[j_rows])))
 
 
-    CPT_V[i] <- (length(changepoint_pelt_var(variable[j_rows], time[j_rows])))
+    cpt_v[i] <- (length(changepoint_pelt_var(variable[j_rows], time[j_rows])))
 
 
-    Phase <- seq_along(unique(phase))
+    phase <- seq_along(unique(phase))
 
   }
 
-  VARI_M <- CPT_M / Time
-  VARI_V <- CPT_V / Time
+  vari_m <- cpt_m / time
+  vari_v <- cpt_v / time
 
-  return(data.frame(Phase, Time, CPT_M, VARI_M, CPT_V, VARI_V))
+  return(data.frame(phase, time, cpt_m, vari_m, cpt_v, vari_v))
 }
-
-
-
