@@ -59,10 +59,10 @@ changepoint_ci <- function(variable, changepoints) {
   ci_upper <- mean_difference + t_value * standard_error
 
   data.frame(
-    Change_Points = changepoints,
-    Mean_Difference = mean_difference,
-    Lower_Bound = ci_lower,
-    Upper_Bound = ci_upper
+    change_points = changepoints,
+    mean_difference = mean_difference,
+    lower_bound = ci_lower,
+    upper_bound = ci_upper
   )
 
 }
