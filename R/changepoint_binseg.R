@@ -47,12 +47,13 @@ changepoint_binseg <- function(variable, time, change_points,
     "mean" = changepoint_binseg_mean(
       variable = variable,
       time = time,
-      change_points = change_points),
+      change_points = change_points
+    ),
     "variance" = changepoint_binseg_var(
       variable = variable,
       time = time,
-      change_points = change_points)
+      change_points = change_points
+    )
   )
 
- }
-
+}
