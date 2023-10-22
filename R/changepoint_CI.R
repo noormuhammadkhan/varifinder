@@ -28,40 +28,41 @@
 #' # PELT algorithm
 #'  cpt_pelt <- changepoint_pelt(variable, time)
 #'  changepoint_ci(variable, cpt_pelt)
-changepoint_ci <- function(variable, changepoints){
+changepoint_ci <- function(variable, changepoints) {
 
-    mean_difference <- NULL
-  for (i in 1:length(changepoints)) {
-    mean_difference[i] <- mean(stats::na.omit(variable[changepoints[i] +
-                                                  1:length(variable)]))
-    - mean(stats::na.omit(variable[1:(changepoints[i])]))
+  mean_difference <- NULL
+  for (i in seq_along(changepoints)) {
+    mean_difference[i] <- mean(
+      stats::na.omit(variable[changepoints[i] + seq_along(variable)])
+    )
+    - mean(stats::na.omit(variable[seq_along(changepoints[i])]))
   }
-
-
 
   n <- length(variable)
   t_value <- stats::qt(0.975, n - changepoints - 1)
 
   standard_error <- NULL
-  for (i in 1:length(changepoints)) {
-    standard_error[i] <- sqrt(stats::var(stats::na.omit(variable[(changepoints[i] + 1):length(variable)])) / (n - changepoints[i]) + stats::var(stats::na.omit(variable[1:(changepoints[i])])) / changepoints[i])
+  for (i in seq_along(changepoints)) {
+    standard_error[i] <- sqrt(
+      stats::var(
+        stats::na.omit(variable[
+          setdiff(seq_along(variable), seq_along((changepoints[i] + 1)))
+        ])
+      ) / (n - changepoints[i]) +
+        stats::var(
+          stats::na.omit(variable[seq_along(changepoints[i])])
+        ) / changepoints[i]
+    )
   }
 
-
-
-
-  CI_lower <- mean_difference - t_value * standard_error
-  CI_upper <- mean_difference + t_value * standard_error
-
-
-
+  ci_lower <- mean_difference - t_value * standard_error
+  ci_upper <- mean_difference + t_value * standard_error
 
   data.frame(
     Change_Points = changepoints,
     Mean_Difference = mean_difference,
-    Lower_Bound = CI_lower,
-    Upper_Bound = CI_upper
-    )
+    Lower_Bound = ci_lower,
+    Upper_Bound = ci_upper
+  )
 
 }
-
