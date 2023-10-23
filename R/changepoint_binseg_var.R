@@ -22,7 +22,7 @@
 #' # Identify the 3 change points of the mean of variable using BinSeg
 #' # algorithm
 #' changepoint_binseg_var(variable, time, change_points)
-changepoint_binseg_var <- function(variable, time, change_points){
+changepoint_binseg_var <- function(variable, time, change_points) {
 
   stopifnot(
     `change_point must be a single number` = length(change_points) == 1,
@@ -39,4 +39,3 @@ changepoint_binseg_var <- function(variable, time, change_points){
 
   sort(unlist(time[changepoint::cpts(cpt_var)]))
 }
-

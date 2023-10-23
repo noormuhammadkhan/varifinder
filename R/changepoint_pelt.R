@@ -35,18 +35,18 @@ changepoint_pelt <- function(variable, time,
       length(variable) == length(time)
   )
 
-
   stat <- match.arg(stat)
 
   switch(
     stat,
     "mean" = changepoint_pelt_mean(
       variable = variable,
-      time = time),
+      time = time
+    ),
     "variance" = changepoint_pelt_var(
       variable = variable,
-      time = time)
+      time = time
+    )
   )
 
 }
-

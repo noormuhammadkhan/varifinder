@@ -37,21 +37,28 @@
 #' varifinder_ci(vari$Time, vari$CPT_V, vari$VARI_V)
 
 
-varifinder_ci <- function(time, cpt, vari){
+varifinder_ci <- function(time, cpt, vari) {
   exact_lower <- NULL
   exact_upper <- NULL
 
-  for (i in 1:length(cpt)) {
+  for (i in seq_along(cpt)) {
     # Generate the confidence interval
-    exact_lower[i] <- binom::binom.confint(cpt[i], time[i],
-                                    conf.level = 0.95, method =
-                                      "exact")$lower
-    exact_upper[i] <- binom::binom.confint(cpt[i], time[i],
-                                    conf.level = 0.95, method =
-                                      "exact")$upper
+    exact_lower[i] <- binom::binom.confint(
+      cpt[i], time[i],
+      conf.level = 0.95,
+      method = "exact"
+    )$lower
+    exact_upper[i] <- binom::binom.confint(
+      cpt[i], time[i],
+      conf.level = 0.95,
+      method = "exact"
+    )$upper
   }
 
-  return(data.frame(Time = time, VARI = vari,
-                    Lower_limit = exact_lower,
-                    Upper_limit = exact_upper))
+  data.frame(
+    time = time,
+    vari = vari,
+    lower_limit = exact_lower,
+    upper_limit = exact_upper
+  )
 }

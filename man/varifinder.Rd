@@ -17,11 +17,11 @@ in long format.}
 }
 \value{
 (num) data frame containing rows for the unique phases.
-The column \code{Times} presents the total number of time points within
-that phase. \code{CPT_M} and \code{CPT_V} present the total number of
+The column \code{times} presents the total number of time points within
+that phase. \code{cpt_m} and \code{cpt_v} present the total number of
 detected change points in each phase based on mean and variance
-function of the variable respectively. Finally, the column \code{VARI_M}
-and \code{VARI_V} present the variability ratio index for each phase.
+function of the variable respectively. Finally, the column \code{vari_m}
+and \code{vari_v} present the variability ratio index for each phase.
 }
 \description{
 Calculate the Variability Ratio Index (VARI) to compare the number of
