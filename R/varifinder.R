@@ -57,5 +57,6 @@ varifinder <- function(variable, phase, time) {
   vari_m <- cpt_m / time_computed
   vari_v <- cpt_v / time_computed
 
-  return(data.frame(phase_computed, time_computed, cpt_m, vari_m, cpt_v, vari_v))
+  return(data.frame(phase_computed, time_computed, cpt_m, vari_m,
+                    cpt_v, vari_v))
 }
